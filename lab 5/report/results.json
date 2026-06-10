@@ -1,0 +1,1713 @@
+{
+  "generated_at": "2026-06-02T22:54:58",
+  "scenarios": [
+    {
+      "name": "stable",
+      "title": "Scenario A: stable",
+      "description": "All APIs respond within 50-180 ms and do not return errors.",
+      "timeout_sec": 1.2,
+      "max_concurrent": 3,
+      "requests_per_api": 3,
+      "emulators": {
+        "stable-a": {
+          "url": "http://127.0.0.1:60623/data",
+          "min_delay_ms": 50,
+          "max_delay_ms": 160,
+          "error_rate": 0.0
+        },
+        "stable-b": {
+          "url": "http://127.0.0.1:60624/data",
+          "min_delay_ms": 70,
+          "max_delay_ms": 180,
+          "error_rate": 0.0
+        },
+        "stable-c": {
+          "url": "http://127.0.0.1:60625/data",
+          "min_delay_ms": 60,
+          "max_delay_ms": 170,
+          "error_rate": 0.0
+        }
+      }
+    },
+    {
+      "name": "slow",
+      "title": "Scenario B: slow",
+      "description": "One API responds after 3-5 seconds, while the others are fast.",
+      "timeout_sec": 1.2,
+      "max_concurrent": 3,
+      "requests_per_api": 3,
+      "emulators": {
+        "fast-a": {
+          "url": "http://127.0.0.1:60823/data",
+          "min_delay_ms": 70,
+          "max_delay_ms": 180,
+          "error_rate": 0.0
+        },
+        "fast-b": {
+          "url": "http://127.0.0.1:60824/data",
+          "min_delay_ms": 80,
+          "max_delay_ms": 220,
+          "error_rate": 0.0
+        },
+        "slow-c": {
+          "url": "http://127.0.0.1:60825/data",
+          "min_delay_ms": 3000,
+          "max_delay_ms": 5000,
+          "error_rate": 0.0
+        }
+      }
+    },
+    {
+      "name": "unstable",
+      "title": "Scenario C: unstable",
+      "description": "Some APIs return HTTP 500/503 with probability 30-50%.",
+      "timeout_sec": 1.2,
+      "max_concurrent": 3,
+      "requests_per_api": 3,
+      "emulators": {
+        "stable-a": {
+          "url": "http://127.0.0.1:63881/data",
+          "min_delay_ms": 80,
+          "max_delay_ms": 220,
+          "error_rate": 0.0
+        },
+        "flaky-b": {
+          "url": "http://127.0.0.1:63882/data",
+          "min_delay_ms": 120,
+          "max_delay_ms": 360,
+          "error_rate": 0.35
+        },
+        "flaky-c": {
+          "url": "http://127.0.0.1:63883/data",
+          "min_delay_ms": 150,
+          "max_delay_ms": 480,
+          "error_rate": 0.5
+        }
+      }
+    }
+  ],
+  "results": [
+    {
+      "scenario": "stable",
+      "strategy": "fixed",
+      "repeat": 1,
+      "total_time_ms": 418.38,
+      "successful": 9,
+      "failed": 0,
+      "timeouts": 0,
+      "concurrent_used": 3
+    },
+    {
+      "scenario": "stable",
+      "strategy": "fixed",
+      "repeat": 2,
+      "total_time_ms": 376.12,
+      "successful": 9,
+      "failed": 0,
+      "timeouts": 0,
+      "concurrent_used": 3
+    },
+    {
+      "scenario": "stable",
+      "strategy": "fixed",
+      "repeat": 3,
+      "total_time_ms": 452.36,
+      "successful": 9,
+      "failed": 0,
+      "timeouts": 0,
+      "concurrent_used": 3
+    },
+    {
+      "scenario": "stable",
+      "strategy": "fixed",
+      "repeat": 4,
+      "total_time_ms": 437.34,
+      "successful": 9,
+      "failed": 0,
+      "timeouts": 0,
+      "concurrent_used": 3
+    },
+    {
+      "scenario": "stable",
+      "strategy": "fixed",
+      "repeat": 5,
+      "total_time_ms": 390.12,
+      "successful": 9,
+      "failed": 0,
+      "timeouts": 0,
+      "concurrent_used": 3
+    },
+    {
+      "scenario": "stable",
+      "strategy": "fixed",
+      "repeat": 6,
+      "total_time_ms": 387.56,
+      "successful": 9,
+      "failed": 0,
+      "timeouts": 0,
+      "concurrent_used": 3
+    },
+    {
+      "scenario": "stable",
+      "strategy": "fixed",
+      "repeat": 7,
+      "total_time_ms": 405.33,
+      "successful": 9,
+      "failed": 0,
+      "timeouts": 0,
+      "concurrent_used": 3
+    },
+    {
+      "scenario": "stable",
+      "strategy": "fixed",
+      "repeat": 8,
+      "total_time_ms": 387.6,
+      "successful": 9,
+      "failed": 0,
+      "timeouts": 0,
+      "concurrent_used": 3
+    },
+    {
+      "scenario": "stable",
+      "strategy": "fixed",
+      "repeat": 9,
+      "total_time_ms": 344.27,
+      "successful": 9,
+      "failed": 0,
+      "timeouts": 0,
+      "concurrent_used": 3
+    },
+    {
+      "scenario": "stable",
+      "strategy": "fixed",
+      "repeat": 10,
+      "total_time_ms": 423.61,
+      "successful": 9,
+      "failed": 0,
+      "timeouts": 0,
+      "concurrent_used": 3
+    },
+    {
+      "scenario": "stable",
+      "strategy": "timeout_race",
+      "repeat": 1,
+      "total_time_ms": 140.88,
+      "successful": 9,
+      "failed": 0,
+      "timeouts": 0,
+      "concurrent_used": 9
+    },
+    {
+      "scenario": "stable",
+      "strategy": "timeout_race",
+      "repeat": 2,
+      "total_time_ms": 171.25,
+      "successful": 9,
+      "failed": 0,
+      "timeouts": 0,
+      "concurrent_used": 9
+    },
+    {
+      "scenario": "stable",
+      "strategy": "timeout_race",
+      "repeat": 3,
+      "total_time_ms": 171.17,
+      "successful": 9,
+      "failed": 0,
+      "timeouts": 0,
+      "concurrent_used": 9
+    },
+    {
+      "scenario": "stable",
+      "strategy": "timeout_race",
+      "repeat": 4,
+      "total_time_ms": 156.32,
+      "successful": 9,
+      "failed": 0,
+      "timeouts": 0,
+      "concurrent_used": 9
+    },
+    {
+      "scenario": "stable",
+      "strategy": "timeout_race",
+      "repeat": 5,
+      "total_time_ms": 141.37,
+      "successful": 9,
+      "failed": 0,
+      "timeouts": 0,
+      "concurrent_used": 9
+    },
+    {
+      "scenario": "stable",
+      "strategy": "timeout_race",
+      "repeat": 6,
+      "total_time_ms": 170.81,
+      "successful": 9,
+      "failed": 0,
+      "timeouts": 0,
+      "concurrent_used": 9
+    },
+    {
+      "scenario": "stable",
+      "strategy": "timeout_race",
+      "repeat": 7,
+      "total_time_ms": 185.38,
+      "successful": 9,
+      "failed": 0,
+      "timeouts": 0,
+      "concurrent_used": 9
+    },
+    {
+      "scenario": "stable",
+      "strategy": "timeout_race",
+      "repeat": 8,
+      "total_time_ms": 174.31,
+      "successful": 9,
+      "failed": 0,
+      "timeouts": 0,
+      "concurrent_used": 9
+    },
+    {
+      "scenario": "stable",
+      "strategy": "timeout_race",
+      "repeat": 9,
+      "total_time_ms": 157.4,
+      "successful": 9,
+      "failed": 0,
+      "timeouts": 0,
+      "concurrent_used": 9
+    },
+    {
+      "scenario": "stable",
+      "strategy": "timeout_race",
+      "repeat": 10,
+      "total_time_ms": 141.4,
+      "successful": 9,
+      "failed": 0,
+      "timeouts": 0,
+      "concurrent_used": 9
+    },
+    {
+      "scenario": "stable",
+      "strategy": "adaptive",
+      "repeat": 1,
+      "total_time_ms": 217.73,
+      "successful": 9,
+      "failed": 0,
+      "timeouts": 0,
+      "concurrent_used": 6
+    },
+    {
+      "scenario": "stable",
+      "strategy": "adaptive",
+      "repeat": 2,
+      "total_time_ms": 282.94,
+      "successful": 9,
+      "failed": 0,
+      "timeouts": 0,
+      "concurrent_used": 6
+    },
+    {
+      "scenario": "stable",
+      "strategy": "adaptive",
+      "repeat": 3,
+      "total_time_ms": 274.9,
+      "successful": 9,
+      "failed": 0,
+      "timeouts": 0,
+      "concurrent_used": 6
+    },
+    {
+      "scenario": "stable",
+      "strategy": "adaptive",
+      "repeat": 4,
+      "total_time_ms": 265.91,
+      "successful": 9,
+      "failed": 0,
+      "timeouts": 0,
+      "concurrent_used": 6
+    },
+    {
+      "scenario": "stable",
+      "strategy": "adaptive",
+      "repeat": 5,
+      "total_time_ms": 266.2,
+      "successful": 9,
+      "failed": 0,
+      "timeouts": 0,
+      "concurrent_used": 6
+    },
+    {
+      "scenario": "stable",
+      "strategy": "adaptive",
+      "repeat": 6,
+      "total_time_ms": 248.83,
+      "successful": 9,
+      "failed": 0,
+      "timeouts": 0,
+      "concurrent_used": 6
+    },
+    {
+      "scenario": "stable",
+      "strategy": "adaptive",
+      "repeat": 7,
+      "total_time_ms": 250.75,
+      "successful": 9,
+      "failed": 0,
+      "timeouts": 0,
+      "concurrent_used": 6
+    },
+    {
+      "scenario": "stable",
+      "strategy": "adaptive",
+      "repeat": 8,
+      "total_time_ms": 236.11,
+      "successful": 9,
+      "failed": 0,
+      "timeouts": 0,
+      "concurrent_used": 6
+    },
+    {
+      "scenario": "stable",
+      "strategy": "adaptive",
+      "repeat": 9,
+      "total_time_ms": 280.83,
+      "successful": 9,
+      "failed": 0,
+      "timeouts": 0,
+      "concurrent_used": 6
+    },
+    {
+      "scenario": "stable",
+      "strategy": "adaptive",
+      "repeat": 10,
+      "total_time_ms": 233.86,
+      "successful": 9,
+      "failed": 0,
+      "timeouts": 0,
+      "concurrent_used": 6
+    },
+    {
+      "scenario": "slow",
+      "strategy": "fixed",
+      "repeat": 1,
+      "total_time_ms": 1811.02,
+      "successful": 6,
+      "failed": 3,
+      "timeouts": 3,
+      "concurrent_used": 3
+    },
+    {
+      "scenario": "slow",
+      "strategy": "fixed",
+      "repeat": 2,
+      "total_time_ms": 1810.37,
+      "successful": 6,
+      "failed": 3,
+      "timeouts": 3,
+      "concurrent_used": 3
+    },
+    {
+      "scenario": "slow",
+      "strategy": "fixed",
+      "repeat": 3,
+      "total_time_ms": 1717.29,
+      "successful": 6,
+      "failed": 3,
+      "timeouts": 3,
+      "concurrent_used": 3
+    },
+    {
+      "scenario": "slow",
+      "strategy": "fixed",
+      "repeat": 4,
+      "total_time_ms": 1983.82,
+      "successful": 6,
+      "failed": 3,
+      "timeouts": 3,
+      "concurrent_used": 3
+    },
+    {
+      "scenario": "slow",
+      "strategy": "fixed",
+      "repeat": 5,
+      "total_time_ms": 1823.97,
+      "successful": 6,
+      "failed": 3,
+      "timeouts": 3,
+      "concurrent_used": 3
+    },
+    {
+      "scenario": "slow",
+      "strategy": "fixed",
+      "repeat": 6,
+      "total_time_ms": 1735.76,
+      "successful": 6,
+      "failed": 3,
+      "timeouts": 3,
+      "concurrent_used": 3
+    },
+    {
+      "scenario": "slow",
+      "strategy": "fixed",
+      "repeat": 7,
+      "total_time_ms": 1745.46,
+      "successful": 6,
+      "failed": 3,
+      "timeouts": 3,
+      "concurrent_used": 3
+    },
+    {
+      "scenario": "slow",
+      "strategy": "fixed",
+      "repeat": 8,
+      "total_time_ms": 1789.16,
+      "successful": 6,
+      "failed": 3,
+      "timeouts": 3,
+      "concurrent_used": 3
+    },
+    {
+      "scenario": "slow",
+      "strategy": "fixed",
+      "repeat": 9,
+      "total_time_ms": 1890.62,
+      "successful": 6,
+      "failed": 3,
+      "timeouts": 3,
+      "concurrent_used": 3
+    },
+    {
+      "scenario": "slow",
+      "strategy": "fixed",
+      "repeat": 10,
+      "total_time_ms": 1782.91,
+      "successful": 6,
+      "failed": 3,
+      "timeouts": 3,
+      "concurrent_used": 3
+    },
+    {
+      "scenario": "slow",
+      "strategy": "timeout_race",
+      "repeat": 1,
+      "total_time_ms": 1207.24,
+      "successful": 6,
+      "failed": 3,
+      "timeouts": 3,
+      "concurrent_used": 9
+    },
+    {
+      "scenario": "slow",
+      "strategy": "timeout_race",
+      "repeat": 2,
+      "total_time_ms": 1199.69,
+      "successful": 6,
+      "failed": 3,
+      "timeouts": 3,
+      "concurrent_used": 9
+    },
+    {
+      "scenario": "slow",
+      "strategy": "timeout_race",
+      "repeat": 3,
+      "total_time_ms": 1209.01,
+      "successful": 6,
+      "failed": 3,
+      "timeouts": 3,
+      "concurrent_used": 9
+    },
+    {
+      "scenario": "slow",
+      "strategy": "timeout_race",
+      "repeat": 4,
+      "total_time_ms": 1208.09,
+      "successful": 6,
+      "failed": 3,
+      "timeouts": 3,
+      "concurrent_used": 9
+    },
+    {
+      "scenario": "slow",
+      "strategy": "timeout_race",
+      "repeat": 5,
+      "total_time_ms": 1200.1,
+      "successful": 6,
+      "failed": 3,
+      "timeouts": 3,
+      "concurrent_used": 9
+    },
+    {
+      "scenario": "slow",
+      "strategy": "timeout_race",
+      "repeat": 6,
+      "total_time_ms": 1204.33,
+      "successful": 6,
+      "failed": 3,
+      "timeouts": 3,
+      "concurrent_used": 9
+    },
+    {
+      "scenario": "slow",
+      "strategy": "timeout_race",
+      "repeat": 7,
+      "total_time_ms": 1204.85,
+      "successful": 6,
+      "failed": 3,
+      "timeouts": 3,
+      "concurrent_used": 9
+    },
+    {
+      "scenario": "slow",
+      "strategy": "timeout_race",
+      "repeat": 8,
+      "total_time_ms": 1199.95,
+      "successful": 6,
+      "failed": 3,
+      "timeouts": 3,
+      "concurrent_used": 9
+    },
+    {
+      "scenario": "slow",
+      "strategy": "timeout_race",
+      "repeat": 9,
+      "total_time_ms": 1203.26,
+      "successful": 6,
+      "failed": 3,
+      "timeouts": 3,
+      "concurrent_used": 9
+    },
+    {
+      "scenario": "slow",
+      "strategy": "timeout_race",
+      "repeat": 10,
+      "total_time_ms": 1198.44,
+      "successful": 6,
+      "failed": 3,
+      "timeouts": 3,
+      "concurrent_used": 9
+    },
+    {
+      "scenario": "slow",
+      "strategy": "adaptive",
+      "repeat": 1,
+      "total_time_ms": 1356.63,
+      "successful": 6,
+      "failed": 3,
+      "timeouts": 3,
+      "concurrent_used": 6
+    },
+    {
+      "scenario": "slow",
+      "strategy": "adaptive",
+      "repeat": 2,
+      "total_time_ms": 1336.1,
+      "successful": 6,
+      "failed": 3,
+      "timeouts": 3,
+      "concurrent_used": 6
+    },
+    {
+      "scenario": "slow",
+      "strategy": "adaptive",
+      "repeat": 3,
+      "total_time_ms": 3604.08,
+      "successful": 6,
+      "failed": 3,
+      "timeouts": 3,
+      "concurrent_used": 6
+    },
+    {
+      "scenario": "slow",
+      "strategy": "adaptive",
+      "repeat": 4,
+      "total_time_ms": 3622.66,
+      "successful": 6,
+      "failed": 3,
+      "timeouts": 3,
+      "concurrent_used": 6
+    },
+    {
+      "scenario": "slow",
+      "strategy": "adaptive",
+      "repeat": 5,
+      "total_time_ms": 3628.76,
+      "successful": 6,
+      "failed": 3,
+      "timeouts": 3,
+      "concurrent_used": 6
+    },
+    {
+      "scenario": "slow",
+      "strategy": "adaptive",
+      "repeat": 6,
+      "total_time_ms": 3618.6,
+      "successful": 6,
+      "failed": 3,
+      "timeouts": 3,
+      "concurrent_used": 6
+    },
+    {
+      "scenario": "slow",
+      "strategy": "adaptive",
+      "repeat": 7,
+      "total_time_ms": 3626.63,
+      "successful": 6,
+      "failed": 3,
+      "timeouts": 3,
+      "concurrent_used": 6
+    },
+    {
+      "scenario": "slow",
+      "strategy": "adaptive",
+      "repeat": 8,
+      "total_time_ms": 3619.55,
+      "successful": 6,
+      "failed": 3,
+      "timeouts": 3,
+      "concurrent_used": 6
+    },
+    {
+      "scenario": "slow",
+      "strategy": "adaptive",
+      "repeat": 9,
+      "total_time_ms": 3604.37,
+      "successful": 6,
+      "failed": 3,
+      "timeouts": 3,
+      "concurrent_used": 6
+    },
+    {
+      "scenario": "slow",
+      "strategy": "adaptive",
+      "repeat": 10,
+      "total_time_ms": 3610.56,
+      "successful": 6,
+      "failed": 3,
+      "timeouts": 3,
+      "concurrent_used": 6
+    },
+    {
+      "scenario": "unstable",
+      "strategy": "fixed",
+      "repeat": 1,
+      "total_time_ms": 769.17,
+      "successful": 6,
+      "failed": 3,
+      "timeouts": 0,
+      "concurrent_used": 3
+    },
+    {
+      "scenario": "unstable",
+      "strategy": "fixed",
+      "repeat": 2,
+      "total_time_ms": 823.74,
+      "successful": 4,
+      "failed": 5,
+      "timeouts": 0,
+      "concurrent_used": 3
+    },
+    {
+      "scenario": "unstable",
+      "strategy": "fixed",
+      "repeat": 3,
+      "total_time_ms": 800.54,
+      "successful": 7,
+      "failed": 2,
+      "timeouts": 0,
+      "concurrent_used": 3
+    },
+    {
+      "scenario": "unstable",
+      "strategy": "fixed",
+      "repeat": 4,
+      "total_time_ms": 748.59,
+      "successful": 8,
+      "failed": 1,
+      "timeouts": 0,
+      "concurrent_used": 3
+    },
+    {
+      "scenario": "unstable",
+      "strategy": "fixed",
+      "repeat": 5,
+      "total_time_ms": 825.41,
+      "successful": 7,
+      "failed": 2,
+      "timeouts": 0,
+      "concurrent_used": 3
+    },
+    {
+      "scenario": "unstable",
+      "strategy": "fixed",
+      "repeat": 6,
+      "total_time_ms": 1027.27,
+      "successful": 7,
+      "failed": 2,
+      "timeouts": 0,
+      "concurrent_used": 3
+    },
+    {
+      "scenario": "unstable",
+      "strategy": "fixed",
+      "repeat": 7,
+      "total_time_ms": 921.58,
+      "successful": 7,
+      "failed": 2,
+      "timeouts": 0,
+      "concurrent_used": 3
+    },
+    {
+      "scenario": "unstable",
+      "strategy": "fixed",
+      "repeat": 8,
+      "total_time_ms": 748.67,
+      "successful": 4,
+      "failed": 5,
+      "timeouts": 0,
+      "concurrent_used": 3
+    },
+    {
+      "scenario": "unstable",
+      "strategy": "fixed",
+      "repeat": 9,
+      "total_time_ms": 762.25,
+      "successful": 5,
+      "failed": 4,
+      "timeouts": 0,
+      "concurrent_used": 3
+    },
+    {
+      "scenario": "unstable",
+      "strategy": "fixed",
+      "repeat": 10,
+      "total_time_ms": 827.15,
+      "successful": 6,
+      "failed": 3,
+      "timeouts": 0,
+      "concurrent_used": 3
+    },
+    {
+      "scenario": "unstable",
+      "strategy": "timeout_race",
+      "repeat": 1,
+      "total_time_ms": 420.56,
+      "successful": 5,
+      "failed": 4,
+      "timeouts": 0,
+      "concurrent_used": 9
+    },
+    {
+      "scenario": "unstable",
+      "strategy": "timeout_race",
+      "repeat": 2,
+      "total_time_ms": 390.81,
+      "successful": 8,
+      "failed": 1,
+      "timeouts": 0,
+      "concurrent_used": 9
+    },
+    {
+      "scenario": "unstable",
+      "strategy": "timeout_race",
+      "repeat": 3,
+      "total_time_ms": 451.55,
+      "successful": 7,
+      "failed": 2,
+      "timeouts": 0,
+      "concurrent_used": 9
+    },
+    {
+      "scenario": "unstable",
+      "strategy": "timeout_race",
+      "repeat": 4,
+      "total_time_ms": 440.11,
+      "successful": 4,
+      "failed": 5,
+      "timeouts": 0,
+      "concurrent_used": 9
+    },
+    {
+      "scenario": "unstable",
+      "strategy": "timeout_race",
+      "repeat": 5,
+      "total_time_ms": 359.62,
+      "successful": 7,
+      "failed": 2,
+      "timeouts": 0,
+      "concurrent_used": 9
+    },
+    {
+      "scenario": "unstable",
+      "strategy": "timeout_race",
+      "repeat": 6,
+      "total_time_ms": 345.64,
+      "successful": 7,
+      "failed": 2,
+      "timeouts": 0,
+      "concurrent_used": 9
+    },
+    {
+      "scenario": "unstable",
+      "strategy": "timeout_race",
+      "repeat": 7,
+      "total_time_ms": 329.75,
+      "successful": 7,
+      "failed": 2,
+      "timeouts": 0,
+      "concurrent_used": 9
+    },
+    {
+      "scenario": "unstable",
+      "strategy": "timeout_race",
+      "repeat": 8,
+      "total_time_ms": 440.35,
+      "successful": 7,
+      "failed": 2,
+      "timeouts": 0,
+      "concurrent_used": 9
+    },
+    {
+      "scenario": "unstable",
+      "strategy": "timeout_race",
+      "repeat": 9,
+      "total_time_ms": 343.48,
+      "successful": 7,
+      "failed": 2,
+      "timeouts": 0,
+      "concurrent_used": 9
+    },
+    {
+      "scenario": "unstable",
+      "strategy": "timeout_race",
+      "repeat": 10,
+      "total_time_ms": 405.71,
+      "successful": 4,
+      "failed": 5,
+      "timeouts": 0,
+      "concurrent_used": 9
+    },
+    {
+      "scenario": "unstable",
+      "strategy": "adaptive",
+      "repeat": 1,
+      "total_time_ms": 703.02,
+      "successful": 7,
+      "failed": 2,
+      "timeouts": 0,
+      "concurrent_used": 6
+    },
+    {
+      "scenario": "unstable",
+      "strategy": "adaptive",
+      "repeat": 2,
+      "total_time_ms": 561.73,
+      "successful": 8,
+      "failed": 1,
+      "timeouts": 0,
+      "concurrent_used": 6
+    },
+    {
+      "scenario": "unstable",
+      "strategy": "adaptive",
+      "repeat": 3,
+      "total_time_ms": 592.82,
+      "successful": 8,
+      "failed": 1,
+      "timeouts": 0,
+      "concurrent_used": 6
+    },
+    {
+      "scenario": "unstable",
+      "strategy": "adaptive",
+      "repeat": 4,
+      "total_time_ms": 795.83,
+      "successful": 7,
+      "failed": 2,
+      "timeouts": 0,
+      "concurrent_used": 6
+    },
+    {
+      "scenario": "unstable",
+      "strategy": "adaptive",
+      "repeat": 5,
+      "total_time_ms": 766.65,
+      "successful": 5,
+      "failed": 4,
+      "timeouts": 0,
+      "concurrent_used": 6
+    },
+    {
+      "scenario": "unstable",
+      "strategy": "adaptive",
+      "repeat": 6,
+      "total_time_ms": 641.1,
+      "successful": 7,
+      "failed": 2,
+      "timeouts": 0,
+      "concurrent_used": 6
+    },
+    {
+      "scenario": "unstable",
+      "strategy": "adaptive",
+      "repeat": 7,
+      "total_time_ms": 1040.04,
+      "successful": 6,
+      "failed": 3,
+      "timeouts": 0,
+      "concurrent_used": 6
+    },
+    {
+      "scenario": "unstable",
+      "strategy": "adaptive",
+      "repeat": 8,
+      "total_time_ms": 1124.28,
+      "successful": 7,
+      "failed": 2,
+      "timeouts": 0,
+      "concurrent_used": 6
+    },
+    {
+      "scenario": "unstable",
+      "strategy": "adaptive",
+      "repeat": 9,
+      "total_time_ms": 1216.25,
+      "successful": 7,
+      "failed": 2,
+      "timeouts": 0,
+      "concurrent_used": 6
+    },
+    {
+      "scenario": "unstable",
+      "strategy": "adaptive",
+      "repeat": 10,
+      "total_time_ms": 946.62,
+      "successful": 7,
+      "failed": 2,
+      "timeouts": 0,
+      "concurrent_used": 6
+    }
+  ],
+  "adaptive_history": [
+    {
+      "scenario": "stable",
+      "repeat": 1,
+      "api": "127.0.0.1:60623/data",
+      "adjusted_concurrency": 3,
+      "success_rate": 1.0,
+      "avg_ms": 123.99
+    },
+    {
+      "scenario": "stable",
+      "repeat": 1,
+      "api": "127.0.0.1:60624/data",
+      "adjusted_concurrency": 3,
+      "success_rate": 1.0,
+      "avg_ms": 123.63
+    },
+    {
+      "scenario": "stable",
+      "repeat": 1,
+      "api": "127.0.0.1:60625/data",
+      "adjusted_concurrency": 3,
+      "success_rate": 1.0,
+      "avg_ms": 102.77
+    },
+    {
+      "scenario": "stable",
+      "repeat": 2,
+      "api": "127.0.0.1:60623/data",
+      "adjusted_concurrency": 6,
+      "success_rate": 1.0,
+      "avg_ms": 115.8
+    },
+    {
+      "scenario": "stable",
+      "repeat": 2,
+      "api": "127.0.0.1:60624/data",
+      "adjusted_concurrency": 6,
+      "success_rate": 1.0,
+      "avg_ms": 128.15
+    },
+    {
+      "scenario": "stable",
+      "repeat": 2,
+      "api": "127.0.0.1:60625/data",
+      "adjusted_concurrency": 6,
+      "success_rate": 1.0,
+      "avg_ms": 121.32
+    },
+    {
+      "scenario": "stable",
+      "repeat": 3,
+      "api": "127.0.0.1:60623/data",
+      "adjusted_concurrency": 6,
+      "success_rate": 1.0,
+      "avg_ms": 115.48
+    },
+    {
+      "scenario": "stable",
+      "repeat": 3,
+      "api": "127.0.0.1:60624/data",
+      "adjusted_concurrency": 6,
+      "success_rate": 1.0,
+      "avg_ms": 130.54
+    },
+    {
+      "scenario": "stable",
+      "repeat": 3,
+      "api": "127.0.0.1:60625/data",
+      "adjusted_concurrency": 6,
+      "success_rate": 1.0,
+      "avg_ms": 113.91
+    },
+    {
+      "scenario": "stable",
+      "repeat": 4,
+      "api": "127.0.0.1:60623/data",
+      "adjusted_concurrency": 6,
+      "success_rate": 1.0,
+      "avg_ms": 109.77
+    },
+    {
+      "scenario": "stable",
+      "repeat": 4,
+      "api": "127.0.0.1:60624/data",
+      "adjusted_concurrency": 6,
+      "success_rate": 1.0,
+      "avg_ms": 126.34
+    },
+    {
+      "scenario": "stable",
+      "repeat": 4,
+      "api": "127.0.0.1:60625/data",
+      "adjusted_concurrency": 6,
+      "success_rate": 1.0,
+      "avg_ms": 126.97
+    },
+    {
+      "scenario": "stable",
+      "repeat": 5,
+      "api": "127.0.0.1:60623/data",
+      "adjusted_concurrency": 6,
+      "success_rate": 1.0,
+      "avg_ms": 112.74
+    },
+    {
+      "scenario": "stable",
+      "repeat": 5,
+      "api": "127.0.0.1:60624/data",
+      "adjusted_concurrency": 6,
+      "success_rate": 1.0,
+      "avg_ms": 124.93
+    },
+    {
+      "scenario": "stable",
+      "repeat": 5,
+      "api": "127.0.0.1:60625/data",
+      "adjusted_concurrency": 6,
+      "success_rate": 1.0,
+      "avg_ms": 126.45
+    },
+    {
+      "scenario": "stable",
+      "repeat": 6,
+      "api": "127.0.0.1:60623/data",
+      "adjusted_concurrency": 6,
+      "success_rate": 1.0,
+      "avg_ms": 111.85
+    },
+    {
+      "scenario": "stable",
+      "repeat": 6,
+      "api": "127.0.0.1:60624/data",
+      "adjusted_concurrency": 6,
+      "success_rate": 1.0,
+      "avg_ms": 124.64
+    },
+    {
+      "scenario": "stable",
+      "repeat": 6,
+      "api": "127.0.0.1:60625/data",
+      "adjusted_concurrency": 6,
+      "success_rate": 1.0,
+      "avg_ms": 128.47
+    },
+    {
+      "scenario": "stable",
+      "repeat": 7,
+      "api": "127.0.0.1:60623/data",
+      "adjusted_concurrency": 6,
+      "success_rate": 1.0,
+      "avg_ms": 110.79
+    },
+    {
+      "scenario": "stable",
+      "repeat": 7,
+      "api": "127.0.0.1:60624/data",
+      "adjusted_concurrency": 6,
+      "success_rate": 1.0,
+      "avg_ms": 123.85
+    },
+    {
+      "scenario": "stable",
+      "repeat": 7,
+      "api": "127.0.0.1:60625/data",
+      "adjusted_concurrency": 6,
+      "success_rate": 1.0,
+      "avg_ms": 131.18
+    },
+    {
+      "scenario": "stable",
+      "repeat": 8,
+      "api": "127.0.0.1:60623/data",
+      "adjusted_concurrency": 6,
+      "success_rate": 1.0,
+      "avg_ms": 110.92
+    },
+    {
+      "scenario": "stable",
+      "repeat": 8,
+      "api": "127.0.0.1:60624/data",
+      "adjusted_concurrency": 6,
+      "success_rate": 1.0,
+      "avg_ms": 120.91
+    },
+    {
+      "scenario": "stable",
+      "repeat": 8,
+      "api": "127.0.0.1:60625/data",
+      "adjusted_concurrency": 6,
+      "success_rate": 1.0,
+      "avg_ms": 129.81
+    },
+    {
+      "scenario": "stable",
+      "repeat": 9,
+      "api": "127.0.0.1:60623/data",
+      "adjusted_concurrency": 6,
+      "success_rate": 1.0,
+      "avg_ms": 108.94
+    },
+    {
+      "scenario": "stable",
+      "repeat": 9,
+      "api": "127.0.0.1:60624/data",
+      "adjusted_concurrency": 6,
+      "success_rate": 1.0,
+      "avg_ms": 123.74
+    },
+    {
+      "scenario": "stable",
+      "repeat": 9,
+      "api": "127.0.0.1:60625/data",
+      "adjusted_concurrency": 6,
+      "success_rate": 1.0,
+      "avg_ms": 127.67
+    },
+    {
+      "scenario": "stable",
+      "repeat": 10,
+      "api": "127.0.0.1:60623/data",
+      "adjusted_concurrency": 6,
+      "success_rate": 1.0,
+      "avg_ms": 107.65
+    },
+    {
+      "scenario": "stable",
+      "repeat": 10,
+      "api": "127.0.0.1:60624/data",
+      "adjusted_concurrency": 6,
+      "success_rate": 1.0,
+      "avg_ms": 120.18
+    },
+    {
+      "scenario": "stable",
+      "repeat": 10,
+      "api": "127.0.0.1:60625/data",
+      "adjusted_concurrency": 6,
+      "success_rate": 1.0,
+      "avg_ms": 127.86
+    },
+    {
+      "scenario": "slow",
+      "repeat": 1,
+      "api": "127.0.0.1:60823/data",
+      "adjusted_concurrency": 3,
+      "success_rate": 1.0,
+      "avg_ms": 128.93
+    },
+    {
+      "scenario": "slow",
+      "repeat": 1,
+      "api": "127.0.0.1:60824/data",
+      "adjusted_concurrency": 3,
+      "success_rate": 1.0,
+      "avg_ms": 190.44
+    },
+    {
+      "scenario": "slow",
+      "repeat": 1,
+      "api": "127.0.0.1:60825/data",
+      "adjusted_concurrency": 3,
+      "success_rate": 0.0,
+      "avg_ms": 1199.81
+    },
+    {
+      "scenario": "slow",
+      "repeat": 2,
+      "api": "127.0.0.1:60823/data",
+      "adjusted_concurrency": 6,
+      "success_rate": 1.0,
+      "avg_ms": 116.43
+    },
+    {
+      "scenario": "slow",
+      "repeat": 2,
+      "api": "127.0.0.1:60824/data",
+      "adjusted_concurrency": 6,
+      "success_rate": 1.0,
+      "avg_ms": 165.23
+    },
+    {
+      "scenario": "slow",
+      "repeat": 2,
+      "api": "127.0.0.1:60825/data",
+      "adjusted_concurrency": 1,
+      "success_rate": 0.0,
+      "avg_ms": 1205.28
+    },
+    {
+      "scenario": "slow",
+      "repeat": 3,
+      "api": "127.0.0.1:60823/data",
+      "adjusted_concurrency": 6,
+      "success_rate": 1.0,
+      "avg_ms": 115.68
+    },
+    {
+      "scenario": "slow",
+      "repeat": 3,
+      "api": "127.0.0.1:60824/data",
+      "adjusted_concurrency": 6,
+      "success_rate": 1.0,
+      "avg_ms": 165.54
+    },
+    {
+      "scenario": "slow",
+      "repeat": 3,
+      "api": "127.0.0.1:60825/data",
+      "adjusted_concurrency": 1,
+      "success_rate": 0.0,
+      "avg_ms": 1203.78
+    },
+    {
+      "scenario": "slow",
+      "repeat": 4,
+      "api": "127.0.0.1:60823/data",
+      "adjusted_concurrency": 6,
+      "success_rate": 1.0,
+      "avg_ms": 125.15
+    },
+    {
+      "scenario": "slow",
+      "repeat": 4,
+      "api": "127.0.0.1:60824/data",
+      "adjusted_concurrency": 6,
+      "success_rate": 1.0,
+      "avg_ms": 161.2
+    },
+    {
+      "scenario": "slow",
+      "repeat": 4,
+      "api": "127.0.0.1:60825/data",
+      "adjusted_concurrency": 1,
+      "success_rate": 0.0,
+      "avg_ms": 1204.57
+    },
+    {
+      "scenario": "slow",
+      "repeat": 5,
+      "api": "127.0.0.1:60823/data",
+      "adjusted_concurrency": 6,
+      "success_rate": 1.0,
+      "avg_ms": 119.64
+    },
+    {
+      "scenario": "slow",
+      "repeat": 5,
+      "api": "127.0.0.1:60824/data",
+      "adjusted_concurrency": 6,
+      "success_rate": 1.0,
+      "avg_ms": 155.65
+    },
+    {
+      "scenario": "slow",
+      "repeat": 5,
+      "api": "127.0.0.1:60825/data",
+      "adjusted_concurrency": 1,
+      "success_rate": 0.0,
+      "avg_ms": 1205.46
+    },
+    {
+      "scenario": "slow",
+      "repeat": 6,
+      "api": "127.0.0.1:60823/data",
+      "adjusted_concurrency": 6,
+      "success_rate": 1.0,
+      "avg_ms": 117.82
+    },
+    {
+      "scenario": "slow",
+      "repeat": 6,
+      "api": "127.0.0.1:60824/data",
+      "adjusted_concurrency": 6,
+      "success_rate": 1.0,
+      "avg_ms": 152.99
+    },
+    {
+      "scenario": "slow",
+      "repeat": 6,
+      "api": "127.0.0.1:60825/data",
+      "adjusted_concurrency": 1,
+      "success_rate": 0.0,
+      "avg_ms": 1205.49
+    },
+    {
+      "scenario": "slow",
+      "repeat": 7,
+      "api": "127.0.0.1:60823/data",
+      "adjusted_concurrency": 6,
+      "success_rate": 1.0,
+      "avg_ms": 120.82
+    },
+    {
+      "scenario": "slow",
+      "repeat": 7,
+      "api": "127.0.0.1:60824/data",
+      "adjusted_concurrency": 6,
+      "success_rate": 1.0,
+      "avg_ms": 156.4
+    },
+    {
+      "scenario": "slow",
+      "repeat": 7,
+      "api": "127.0.0.1:60825/data",
+      "adjusted_concurrency": 1,
+      "success_rate": 0.0,
+      "avg_ms": 1206.22
+    },
+    {
+      "scenario": "slow",
+      "repeat": 8,
+      "api": "127.0.0.1:60823/data",
+      "adjusted_concurrency": 6,
+      "success_rate": 1.0,
+      "avg_ms": 123.25
+    },
+    {
+      "scenario": "slow",
+      "repeat": 8,
+      "api": "127.0.0.1:60824/data",
+      "adjusted_concurrency": 6,
+      "success_rate": 1.0,
+      "avg_ms": 155.73
+    },
+    {
+      "scenario": "slow",
+      "repeat": 8,
+      "api": "127.0.0.1:60825/data",
+      "adjusted_concurrency": 1,
+      "success_rate": 0.0,
+      "avg_ms": 1206.57
+    },
+    {
+      "scenario": "slow",
+      "repeat": 9,
+      "api": "127.0.0.1:60823/data",
+      "adjusted_concurrency": 6,
+      "success_rate": 1.0,
+      "avg_ms": 120.8
+    },
+    {
+      "scenario": "slow",
+      "repeat": 9,
+      "api": "127.0.0.1:60824/data",
+      "adjusted_concurrency": 6,
+      "success_rate": 1.0,
+      "avg_ms": 156.3
+    },
+    {
+      "scenario": "slow",
+      "repeat": 9,
+      "api": "127.0.0.1:60825/data",
+      "adjusted_concurrency": 1,
+      "success_rate": 0.0,
+      "avg_ms": 1205.66
+    },
+    {
+      "scenario": "slow",
+      "repeat": 10,
+      "api": "127.0.0.1:60823/data",
+      "adjusted_concurrency": 6,
+      "success_rate": 1.0,
+      "avg_ms": 123.86
+    },
+    {
+      "scenario": "slow",
+      "repeat": 10,
+      "api": "127.0.0.1:60824/data",
+      "adjusted_concurrency": 6,
+      "success_rate": 1.0,
+      "avg_ms": 153.19
+    },
+    {
+      "scenario": "slow",
+      "repeat": 10,
+      "api": "127.0.0.1:60825/data",
+      "adjusted_concurrency": 1,
+      "success_rate": 0.0,
+      "avg_ms": 1205.64
+    },
+    {
+      "scenario": "unstable",
+      "repeat": 1,
+      "api": "127.0.0.1:63881/data",
+      "adjusted_concurrency": 3,
+      "success_rate": 1.0,
+      "avg_ms": 145.48
+    },
+    {
+      "scenario": "unstable",
+      "repeat": 1,
+      "api": "127.0.0.1:63882/data",
+      "adjusted_concurrency": 3,
+      "success_rate": 0.333,
+      "avg_ms": 276.7
+    },
+    {
+      "scenario": "unstable",
+      "repeat": 1,
+      "api": "127.0.0.1:63883/data",
+      "adjusted_concurrency": 3,
+      "success_rate": 1.0,
+      "avg_ms": 389.72
+    },
+    {
+      "scenario": "unstable",
+      "repeat": 2,
+      "api": "127.0.0.1:63881/data",
+      "adjusted_concurrency": 6,
+      "success_rate": 1.0,
+      "avg_ms": 148.16
+    },
+    {
+      "scenario": "unstable",
+      "repeat": 2,
+      "api": "127.0.0.1:63882/data",
+      "adjusted_concurrency": 1,
+      "success_rate": 0.667,
+      "avg_ms": 265.48
+    },
+    {
+      "scenario": "unstable",
+      "repeat": 2,
+      "api": "127.0.0.1:63883/data",
+      "adjusted_concurrency": 5,
+      "success_rate": 0.833,
+      "avg_ms": 368.54
+    },
+    {
+      "scenario": "unstable",
+      "repeat": 3,
+      "api": "127.0.0.1:63881/data",
+      "adjusted_concurrency": 6,
+      "success_rate": 1.0,
+      "avg_ms": 144.05
+    },
+    {
+      "scenario": "unstable",
+      "repeat": 3,
+      "api": "127.0.0.1:63882/data",
+      "adjusted_concurrency": 1,
+      "success_rate": 0.778,
+      "avg_ms": 242.71
+    },
+    {
+      "scenario": "unstable",
+      "repeat": 3,
+      "api": "127.0.0.1:63883/data",
+      "adjusted_concurrency": 5,
+      "success_rate": 0.778,
+      "avg_ms": 346.37
+    },
+    {
+      "scenario": "unstable",
+      "repeat": 4,
+      "api": "127.0.0.1:63881/data",
+      "adjusted_concurrency": 6,
+      "success_rate": 1.0,
+      "avg_ms": 141.23
+    },
+    {
+      "scenario": "unstable",
+      "repeat": 4,
+      "api": "127.0.0.1:63882/data",
+      "adjusted_concurrency": 1,
+      "success_rate": 0.667,
+      "avg_ms": 248.26
+    },
+    {
+      "scenario": "unstable",
+      "repeat": 4,
+      "api": "127.0.0.1:63883/data",
+      "adjusted_concurrency": 5,
+      "success_rate": 0.833,
+      "avg_ms": 325.48
+    },
+    {
+      "scenario": "unstable",
+      "repeat": 5,
+      "api": "127.0.0.1:63881/data",
+      "adjusted_concurrency": 6,
+      "success_rate": 1.0,
+      "avg_ms": 144.45
+    },
+    {
+      "scenario": "unstable",
+      "repeat": 5,
+      "api": "127.0.0.1:63882/data",
+      "adjusted_concurrency": 1,
+      "success_rate": 0.6,
+      "avg_ms": 249.62
+    },
+    {
+      "scenario": "unstable",
+      "repeat": 5,
+      "api": "127.0.0.1:63883/data",
+      "adjusted_concurrency": 5,
+      "success_rate": 0.733,
+      "avg_ms": 335.06
+    },
+    {
+      "scenario": "unstable",
+      "repeat": 6,
+      "api": "127.0.0.1:63881/data",
+      "adjusted_concurrency": 6,
+      "success_rate": 1.0,
+      "avg_ms": 148.21
+    },
+    {
+      "scenario": "unstable",
+      "repeat": 6,
+      "api": "127.0.0.1:63882/data",
+      "adjusted_concurrency": 1,
+      "success_rate": 0.667,
+      "avg_ms": 243.49
+    },
+    {
+      "scenario": "unstable",
+      "repeat": 6,
+      "api": "127.0.0.1:63883/data",
+      "adjusted_concurrency": 3,
+      "success_rate": 0.667,
+      "avg_ms": 326.94
+    },
+    {
+      "scenario": "unstable",
+      "repeat": 7,
+      "api": "127.0.0.1:63881/data",
+      "adjusted_concurrency": 6,
+      "success_rate": 1.0,
+      "avg_ms": 156.91
+    },
+    {
+      "scenario": "unstable",
+      "repeat": 7,
+      "api": "127.0.0.1:63882/data",
+      "adjusted_concurrency": 1,
+      "success_rate": 0.7,
+      "avg_ms": 254.62
+    },
+    {
+      "scenario": "unstable",
+      "repeat": 7,
+      "api": "127.0.0.1:63883/data",
+      "adjusted_concurrency": 1,
+      "success_rate": 0.6,
+      "avg_ms": 341.63
+    },
+    {
+      "scenario": "unstable",
+      "repeat": 8,
+      "api": "127.0.0.1:63881/data",
+      "adjusted_concurrency": 6,
+      "success_rate": 1.0,
+      "avg_ms": 155.19
+    },
+    {
+      "scenario": "unstable",
+      "repeat": 8,
+      "api": "127.0.0.1:63882/data",
+      "adjusted_concurrency": 1,
+      "success_rate": 0.75,
+      "avg_ms": 268.51
+    },
+    {
+      "scenario": "unstable",
+      "repeat": 8,
+      "api": "127.0.0.1:63883/data",
+      "adjusted_concurrency": 1,
+      "success_rate": 0.5,
+      "avg_ms": 337.01
+    },
+    {
+      "scenario": "unstable",
+      "repeat": 9,
+      "api": "127.0.0.1:63881/data",
+      "adjusted_concurrency": 6,
+      "success_rate": 1.0,
+      "avg_ms": 160.69
+    },
+    {
+      "scenario": "unstable",
+      "repeat": 9,
+      "api": "127.0.0.1:63882/data",
+      "adjusted_concurrency": 1,
+      "success_rate": 0.75,
+      "avg_ms": 269.94
+    },
+    {
+      "scenario": "unstable",
+      "repeat": 9,
+      "api": "127.0.0.1:63883/data",
+      "adjusted_concurrency": 1,
+      "success_rate": 0.45,
+      "avg_ms": 349.49
+    },
+    {
+      "scenario": "unstable",
+      "repeat": 10,
+      "api": "127.0.0.1:63881/data",
+      "adjusted_concurrency": 6,
+      "success_rate": 1.0,
+      "avg_ms": 163.6
+    },
+    {
+      "scenario": "unstable",
+      "repeat": 10,
+      "api": "127.0.0.1:63882/data",
+      "adjusted_concurrency": 1,
+      "success_rate": 0.7,
+      "avg_ms": 283.91
+    },
+    {
+      "scenario": "unstable",
+      "repeat": 10,
+      "api": "127.0.0.1:63883/data",
+      "adjusted_concurrency": 1,
+      "success_rate": 0.5,
+      "avg_ms": 352.4
+    }
+  ]
+}

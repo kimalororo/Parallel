@@ -1,0 +1,54 @@
+# Python bytecode/cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Test/type/lint caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# Virtual environments and local env files
+.venv/
+venv/
+env/
+ENV/
+.env
+.env.*
+
+# Jupyter/IPython checkpoints
+.ipynb_checkpoints/
+
+# IDE/editor metadata
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS metadata
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Microsoft Office temporary lock files
+~$*
+~$*.docx
+~$*.xlsx
+~$*.pptx
+
+# Large media artifacts kept locally
+*.mp4
+
+# Local scratch/backup artifacts created during verification
+REPORTS/backup_before_update_*/
+REPORTS/*.before_*.docx
+**/backup_long_*/
+**/backup_long_*
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp

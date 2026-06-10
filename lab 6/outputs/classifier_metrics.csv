@@ -1,0 +1,4 @@
+model,accuracy,weighted_precision,weighted_recall,weighted_f1,training_time_sec,best_params
+LogisticRegression,0.9980069755854509,0.9980184297487529,0.9980069755854509,0.998007615548304,4.53848090000065,"{""regParam"": 0.0, ""elasticNetParam"": 0.0}"
+GBT,0.9845540607872446,0.9845521422385718,0.9845540607872446,0.9845527886712218,24.84383809999963,"[{""class"": 0.0, ""params"": {""maxDepth"": 5, ""maxIter"": 25}}, {""class"": 1.0, ""params"": {""maxDepth"": 5, ""maxIter"": 25}}, {""class"": 2.0, ""params"": {""maxDepth"": 3, ""maxIter"": 25}}]"
+RandomForest,0.9805680119581465,0.9805672625190773,0.9805680119581465,0.9805598476036272,4.670574300000226,"{""numTrees"": 40, ""maxDepth"": 8}"

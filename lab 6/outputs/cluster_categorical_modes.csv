@@ -1,0 +1,52 @@
+cluster,feature,mode,count
+0,Churn,No,1785
+0,Contract,Month-to-month,2774
+0,Dependents,No,2550
+0,DeviceProtection,No,2403
+0,InternetService,Fiber optic,1668
+0,MultipleLines,No,1659
+0,OnlineBackup,No,2335
+0,OnlineSecurity,No,2436
+0,PaperlessBilling,Yes,2131
+0,Partner,No,2157
+0,PaymentMethod,Electronic check,1572
+0,PhoneService,Yes,2692
+0,SeniorCitizen,No,2563
+0,StreamingMovies,No,2157
+0,StreamingTV,No,2168
+0,TechSupport,No,2479
+0,gender,Male,1595
+1,Churn,No,1976
+1,Contract,Two year,978
+1,Dependents,No,1500
+1,DeviceProtection,Yes,1637
+1,InternetService,Fiber optic,1428
+1,MultipleLines,Yes,1596
+1,OnlineBackup,Yes,1576
+1,OnlineSecurity,Yes,1267
+1,PaperlessBilling,Yes,1594
+1,Partner,Yes,1633
+1,PaymentMethod,Bank transfer (automatic),751
+1,PhoneService,Yes,2143
+1,SeniorCitizen,No,1864
+1,StreamingMovies,Yes,1701
+1,StreamingTV,Yes,1687
+1,TechSupport,Yes,1335
+1,gender,Male,1181
+2,Churn,No,1413
+2,Contract,Two year,638
+2,Dependents,No,883
+2,DeviceProtection,No internet service,1526
+2,InternetService,No,1526
+2,MultipleLines,No,1184
+2,OnlineBackup,No internet service,1526
+2,OnlineSecurity,No internet service,1526
+2,PaperlessBilling,No,1080
+2,Partner,No,788
+2,PaymentMethod,Mailed check,741
+2,PhoneService,Yes,1526
+2,SeniorCitizen,No,1474
+2,StreamingMovies,No internet service,1526
+2,StreamingTV,No internet service,1526
+2,TechSupport,No internet service,1526
+2,gender,Male,779

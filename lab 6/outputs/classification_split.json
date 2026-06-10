@@ -1,0 +1,11 @@
+{
+  "train_rows": 5036,
+  "test_rows": 2007,
+  "class_count": 3,
+  "classes": [
+    0.0,
+    1.0,
+    2.0
+  ],
+  "best_classifier": "LogisticRegression"
+}

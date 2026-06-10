@@ -1,0 +1,124 @@
+{
+  "dataset": {
+    "dataset": "Telco Customer Churn",
+    "source_url": "https://raw.githubusercontent.com/IBM/telco-customer-churn-on-icp4d/master/data/Telco-Customer-Churn.csv",
+    "rows": 7043,
+    "columns_after_customer_id_drop": 20,
+    "numeric_features": [
+      "tenure",
+      "MonthlyCharges",
+      "TotalCharges"
+    ],
+    "categorical_features": [
+      "gender",
+      "SeniorCitizen",
+      "Partner",
+      "Dependents",
+      "PhoneService",
+      "MultipleLines",
+      "InternetService",
+      "OnlineSecurity",
+      "OnlineBackup",
+      "DeviceProtection",
+      "TechSupport",
+      "StreamingTV",
+      "StreamingMovies",
+      "Contract",
+      "PaperlessBilling",
+      "PaymentMethod"
+    ],
+    "profile_categorical_features": [
+      "gender",
+      "SeniorCitizen",
+      "Partner",
+      "Dependents",
+      "PhoneService",
+      "MultipleLines",
+      "InternetService",
+      "OnlineSecurity",
+      "OnlineBackup",
+      "DeviceProtection",
+      "TechSupport",
+      "StreamingTV",
+      "StreamingMovies",
+      "Contract",
+      "PaperlessBilling",
+      "PaymentMethod",
+      "Churn"
+    ],
+    "missing_before_imputation": {
+      "tenure": 0,
+      "MonthlyCharges": 0,
+      "TotalCharges": 11,
+      "gender": 0,
+      "SeniorCitizen": 0,
+      "Partner": 0,
+      "Dependents": 0,
+      "PhoneService": 0,
+      "MultipleLines": 0,
+      "InternetService": 0,
+      "OnlineSecurity": 0,
+      "OnlineBackup": 0,
+      "DeviceProtection": 0,
+      "TechSupport": 0,
+      "StreamingTV": 0,
+      "StreamingMovies": 0,
+      "Contract": 0,
+      "PaperlessBilling": 0,
+      "PaymentMethod": 0,
+      "Churn": 0
+    },
+    "numeric_imputation_medians": {
+      "tenure": 29.0,
+      "MonthlyCharges": 70.3,
+      "TotalCharges": 1394.55
+    },
+    "feature_vector_dimension": 46
+  },
+  "best_cluster_models": {
+    "KMeans": {
+      "algorithm": "KMeans",
+      "k": 3,
+      "silhouette": 0.41140814321599417,
+      "wcss": 50629.46328280962,
+      "bic": null,
+      "log_likelihood": null,
+      "training_time_sec": 0.8366705000007642
+    },
+    "BisectingKMeans": {
+      "algorithm": "BisectingKMeans",
+      "k": 3,
+      "silhouette": 0.3909998335366823,
+      "wcss": 51319.20059713449,
+      "bic": null,
+      "log_likelihood": null,
+      "training_time_sec": 2.932796500001132
+    },
+    "GaussianMixture": {
+      "algorithm": "GaussianMixture",
+      "k": 10,
+      "silhouette": 0.1435334843173217,
+      "wcss": null,
+      "bic": 344980.5029170038,
+      "log_likelihood": -122525.46860288516,
+      "training_time_sec": 3.3455575999996654
+    }
+  },
+  "classification_target_algorithm": "KMeans",
+  "pca_explained_variance": {
+    "pc1": 0.28560725951712335,
+    "pc2": 0.18925759029704672,
+    "total": 0.4748648498141701
+  },
+  "classification_split": {
+    "train_rows": 5036,
+    "test_rows": 2007,
+    "class_count": 3,
+    "classes": [
+      0.0,
+      1.0,
+      2.0
+    ],
+    "best_classifier": "LogisticRegression"
+  }
+}

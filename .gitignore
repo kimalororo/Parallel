@@ -25,6 +25,9 @@ ENV/
 # IDE/editor metadata
 .vscode/
 .idea/
+.agents/
+**/.agents/
+**/.git.local-backup/
 *.swp
 *.swo
 

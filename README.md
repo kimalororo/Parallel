@@ -66,18 +66,4 @@ cd course
 python run_experiments.py --replicates 5 --eval-repeats 35
 ```
 
-Перестроить только графики из готовых CSV:
-
-```powershell
-cd course
-python regenerate_plots.py
-```
-
-Собрать DOCX-отчет:
-
-```powershell
-cd course
-python build_report.py
-python restyle_report_like_example.py
-```
 
